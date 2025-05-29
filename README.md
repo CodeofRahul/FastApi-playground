@@ -26,8 +26,230 @@ A FastAPI lab for prototyping ideas, testing features, and deepening API knowled
 #### Run the Server:
 
 ```bash
+uvicorn main:app --reload
 fastapi dev main.py
 ```
+
+
+## **HTTP Requests:**
+
+## Real-world analogy:
+
+GET is like reading a book in a library.
+Post is like writing a note and handing it to the librarian.
+
+-	When you GET, you’re just requesting to see something
+-	When you POST, you’re sending data to be processed or saved.
+
+### Technical Difference
+
+| Feature | GET | POST |
+| -------- | ------- | ------- |
+
+| Purpose | Retrieve data | Submit data |
+| Data location | In URL (query string) | In the request body |
+| Visibility | Data is visible in URL | Data is hidden from URL |
+| Use for | Reading/fetching resources | Creating/updating resources |
+| Bookmarkable | Yes | No |
+| Idempotent | Yes (repeating gives same result) | Not necessarily (can cause changes |
+
+### Get request:
+
+```http
+GET /search?query=shoes HTTP/1.1
+```
+
+-	You’re asking: “Hey server, show me all the shoes.”
+
+### POST request:
+
+```http
+POST /add-to-cart HTTP/1.1
+Body: { “item_id”: 123, “quantity”: 2}
+
+-	You’re saying: “Hey server, please add this item to my cart.”
+
+## Think of it like a conversation with a website:
+
+### 1. GET = “Just give me info”
+
+-	You’re asking the server for something.
+-	Example: “Show me all blog posts tagged with ‘travel’.”
+-	You don’t change anything on the server.
+-	The server responds with that info.
+
+**In the browser: **
+
+-	You type in a URL or click a link – that’s a GET request.
+-	Example: `https://example.com/posts?tag=travel`
+
+### 2. POST = “I’m giving you something to do”
+
+-	You’re sending data to the server to do something with it.
+-	Example: “Here is my comment on this blog post.”
+-	The server might save that comment to a database.
+
+**In the browser: **
+
+-	You fill out a form and click “Submit” – that’s a POST request.
+-	Example: You post a review, submit login info, or upload a photo.
+
+## Why does it matter?
+
+-	GET is for viewing. (safe, can be cached, can be bookmarked.)
+-	POST is for doing. (Sends new data, not cached, not bookmarkable.)
+
+## GET Scenarios (Read-only actions)
+
+These are situations where the client just wants to retrieve data, without making any changes:
+
+### 1. Loading a web page
+
+-	URL: `https://news.com/latest`
+-	You want to view the latest news.
+-	No data is sent except in the URL.
+
+### 2. Search queries
+
+-	URL: `https://store.com/search?q=laptop`
+-	You are searching for laptop”.
+-	The search term is passed as a query string.
+
+### 3. Viewing a user profile
+
+-	URL: `https://site.com/user/john`
+-	Just displays John’s profile
+-	Doesn’t change anything.
+
+### 4. Pagination
+
+-	URL: `https://blog.com/posts?page=3`
+-	You’re just asking for page 3 of the blog.
+
+### 5. Filtering results
+
+-	URL: `https://shop.com/products?category=shoes&price=low`
+-	You’re applying filters to what you see.
+
+## POST Scenarios (Write/Submit actions)
+
+These are situations where the client is sending data to the server to create, modify, or trigger actions.
+
+### 1. Submitting a login form
+
+-	URL: `https://site.com/login`
+-	Sends your username and password.
+-	Server checks and starts your session.
+
+### 2. Creating a new user/account
+
+-	URL: `https://site.com/signup`
+-	Sends your name, email, password, etc.
+
+### 3. Submitting a contact form
+
+-	Sends message, name, email to the server to be saved or emailed.
+
+### 4. Uploading a file or image
+
+-	Sends the file data as part of the request body.
+
+### 5. Adding to a shopping cart
+
+-	You click “Add to Cart” – the item ID and quantity are sent to the server.
+
+### 6. Placing an order
+
+-	URL: `https://shop.com/checkout`
+-	Sends the cart items, payment detail, shipping info.
+
+### 7. Posting a comment or message
+
+-	Submits text, maybe with a post ID or thread ID.
+
+
+## Summary Table:
+
+| Scenario | Method |
+| --- |--- |
+| View a blog post | GET |
+| Search for a products | GET |
+| Login to a site | POST |
+| Sign up for a new account | POST |
+| Add an item to cart | POST |
+| Submit a contact form | POST |
+| View a list of product | GET |
+| Filter products by price | GET |
+| Post a review | GET |
+| Get weather info by city | GET |
+| Upload a profile picture | POST |
+| View user profile | GET |
+
+## GET Request on Flipkart (Viewing or fetching data)
+
+These happen when you’re just browsing or searching without changing anything on the server.
+
+### 1. Homepage Load
+
+-	When you go to `https://www.flipkart.com`, your browser sends a GET request.
+-	You’re just asking to view the homepage.
+
+### 2. Searching for a product 
+
+-	You type “mobile phone” in the search bar and hit Enter.
+-	URL becomes: `https://www.flipkart.com/search?q=mobile+phones`
+-	That’s a GET request with the query `q=mobile+phones`
+-	You are just requesting info.
+
+### 3. Filtering products
+
+-	Apply a filter like “Price: Low to High” or select a brand.
+-	URL updates to something like: `https://www.flipkart.com/search?q=mobile+phones&sort=price_asc&brand=Samsung`
+-	Still a GET request – just showing filtered results.
+
+### 4. Viewing a product
+
+-	Click on a phone to see its details.
+-	URL: `https://www.flipkart.com/Samsung-galaxy/product-id`
+-	Again, it’s just fetching info – so it’s a GET.
+
+## POST Requests on Flipkart (Sending data or changing state)
+
+These happen when you interact in a way that changes something – like logging in, adding to cart, or checking out.
+
+### 1. Logging in
+
+-	You enter your phone/email and password.
+-	Your browser sends a POST request to `https://www.flipkart.com/api/login`
+-	Flipkart checks your credentials and starts a session.
+
+### 2. Adding a product to cart
+
+-	You click “Add to Cart”.
+-	A POST request is sent to something like: `https://www.flipkart.com/api/add-to-cart`
+-	Data sent: `{ product_id: 12345, quantity: 1 }`
+
+### 3. Placing an order
+
+-	After selecting items, address, and payment, you click “Place Order”.
+-	A POST request sends your order details to Flipkart’s servers to process.
+
+### 4. Submitting a review
+
+-	You rate a product and write a review.
+-	Flipkart uses a POST request to store that review in their database.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
