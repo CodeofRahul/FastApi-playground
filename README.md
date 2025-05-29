@@ -17,6 +17,19 @@ A FastAPI lab for prototyping ideas, testing features, and deepening API knowled
 
 ![Fastapi 1](https://github.com/user-attachments/assets/5bf32338-a69c-48b3-b597-fd32351ead8e)
 
+## Why FastAPI is fast to code?
+
+1. Automatic input Validation <br>
+2. Auto-Generated interactive Documentation <br>
+3. Seamless Integration with Modern Ecosystem (ML/DL libraries, OAuth, JWT, SQL Alchemy, Docker, Kubernetes etc) 
+
+#### Run the Server:
+
+```bash
+fastapi dev main.py
+```
+
+
 
 ## Bash Environment Commands
 
@@ -48,7 +61,7 @@ python -m venv <env_name>
 ```bash
 
 source <env_name>/bin/activate  # for macos
-source <env_name>/Scripts/activate
+source <env_name>/Scripts/activate  # for windows
 # Example for macos: source playground/bin/activate
 # Example for window bash: source playground/Scripts/activate
 ```
@@ -109,3 +122,16 @@ done
 - To add any particular file = `git add <file_name>`
 - To commit = `git commit -m "commit message"`
 - To push the code = `git push origin main`
+
+Docs:
+
+- Documentation: https://fastapi.tiangolo.com
+- Source Code: https://github.com/fastapi/fastapi
+
+-  Swagger UI:
+
+```bash
+localhost:8000/docs
+http://127.0.0.1:8000/docs
+```
+
