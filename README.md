@@ -1,8 +1,21 @@
 # FastApi-playground
 A FastAPI lab for prototyping ideas, testing features, and deepening API knowledge.
 
+![Fastapi 8](https://github.com/user-attachments/assets/cf28c33f-eba2-4562-a1f8-ce02e09c1afa)
 
+![Fastapi 7](https://github.com/user-attachments/assets/de5730b6-9fbe-4f2d-a061-c5eba6731f1d)
 
+![Fastapi 6](https://github.com/user-attachments/assets/574a192d-2d68-4a30-af85-d6817e5bdf43)
+
+![Fastapi 5](https://github.com/user-attachments/assets/08d4b9ec-d6ff-43ea-86cb-dd7061c71e3e)
+
+![Fastapi 4](https://github.com/user-attachments/assets/380c1b44-e4ca-4c5e-af6d-47009bbad433)
+
+![Fastapi 3](https://github.com/user-attachments/assets/21a25096-17e5-4288-b238-8dfe5c542ca2)
+
+![Fastapi 2](https://github.com/user-attachments/assets/65a5d86e-b424-4d42-a9c8-154176f7fab9)
+
+![Fastapi 1](https://github.com/user-attachments/assets/5bf32338-a69c-48b3-b597-fd32351ead8e)
 
 
 ## Bash Environment Commands
