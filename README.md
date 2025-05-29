@@ -239,13 +239,80 @@ These happen when you interact in a way that changes something – like logging 
 -	Flipkart uses a POST request to store that review in their database.
 
 
+### Path Parameter
+
+The Path() function in FastAPI is used to provide, validation rules, and documentation hints for path parameters in your API endpoints.
+
+Title <br>
+Description <br>
+ge, gt, le, lt <br>
+Min_length <br>
+Max_length <br>
+regex <br>
 
 
+### HTTP status codes
+
+**HTTP status codes** are **3-digit number** returned by a web server (like FastAPI) to indicate the result of a client's request (like from a browser or API consumer).
+
+LINK
 
 
+They help the **client (browser, fronted, mobile app, etc.) understand**:
+
+- whether the request was successful.
+- whether something went wrong.
+- and what kind of issue occurred (if any).
+
+|  |  |  |
+| -------- | ------- | ------- |
+| 2xx | ✅ Success | The request was successfully recieved and processed |
+| 3xx | 🔁 Redirection | Further action needs to be taken (e.g. redirect) |
+| 4xx | ⚠️ Client Error | Something is wrong with the request from the client |
+| 5xx | ❌ Server Error | Something went wrong on the server side |
 
 
+|  |  |  |
+| -------- | ------- | ------- |
+| 200 OK | Standard success | A `GET` or `POST` suceeded |
+| 201 Created | Resource created | After a `POST` that created something |
+| 204 No Content | Success, but no data returned | After a `DELETE` request |
+| 400 Bad Unauthorized | Malformed or invalid authentication | Missing field, wrong data type |
+| 401 Unauthorized | No/invallid authentication | Login required |
+| 403 Forbidden | Authenticated, but no permission | Logged in but not allowed |
+| 404 Not Found | Resource doesn't exist | Patient ID not DB |
+| 500 Internal Server Error | Generic failure | Something broken the server |
+| 502 Bad Gateway | Gateway (like Nginx) failed to reach backend |  |
+| 503 Service Unavailable | Server is down or overloaded |  |
 
+`HTTPException` is a Special built-in exception in FastAPI used to **return custom HTTP error responses** when something goes wrong your API.
+
+Instead of returning a normal JSON or crashing the Server, you can **gracefully raise an error** with:
+
+- a proper **HTTP** stats code (like 404, 400, 403, etc.)
+- a custom error message
+- (optional) extra header
+
+
+## Query Parameter
+
+**Query parameter** are optional key-value pairs appended to the end of a URL, used to **pass additional data** to the server in an HTTP request. They are typically employed for operations like filtering , sorting. <br>
+searching and pagination without altering the endpoint path itself.
+
+`/patients?city=Delhi&sort_by=age`
+
+
+- The `?` marks the start of query parameters.
+- Each parameter is a key-value pair: `key=value`
+- Multiple parameters are separated by `&`
+
+In this case:
+
+- `city=Delhi` is query parameter for filtering
+- `sort_by=age` is a query parameter for sorting
+
+
+`Query()` is a utility function provided by **FastAPI** to declare, validate, and document **query parameters** in your API endpoints.
 
 
 
