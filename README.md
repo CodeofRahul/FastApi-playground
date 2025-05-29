@@ -45,7 +45,6 @@ Post is like writing a note and handing it to the librarian.
 
 | Feature | GET | POST |
 | -------- | ------- | ------- |
-
 | Purpose | Retrieve data | Submit data |
 | Data location | In URL (query string) | In the request body |
 | Visibility | Data is visible in URL | Data is hidden from URL |
@@ -170,20 +169,20 @@ These are situations where the client is sending data to the server to create, m
 
 ## Summary Table:
 
-| Scenario | Method |
-| --- |--- |
-| View a blog post | GET |
-| Search for a products | GET |
-| Login to a site | POST |
-| Sign up for a new account | POST |
-| Add an item to cart | POST |
-| Submit a contact form | POST |
-| View a list of product | GET |
-| Filter products by price | GET |
-| Post a review | GET |
-| Get weather info by city | GET |
-| Upload a profile picture | POST |
-| View user profile | GET |
+ Scenario | Method |
+ -------- | ------- | 
+ View a blog post | GET |
+ Search for a products | GET |
+ Login to a site | POST |
+ Sign up for a new account | POST |
+ Add an item to cart | POST |
+ Submit a contact form | POST |
+ View a list of product | GET |
+ Filter products by price | GET |
+ Post a review | GET |
+ Get weather info by city | GET |
+ Upload a profile picture | POST |
+ View user profile | GET |
 
 ## GET Request on Flipkart (Viewing or fetching data)
 
