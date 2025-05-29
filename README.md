@@ -45,7 +45,6 @@ Post is like writing a note and handing it to the librarian.
 
 | Feature | GET | POST |
 | -------- | ------- | ------- |
-
 | Purpose | Retrieve data | Submit data |
 | Data location | In URL (query string) | In the request body |
 | Visibility | Data is visible in URL | Data is hidden from URL |
@@ -66,6 +65,7 @@ GET /search?query=shoes HTTP/1.1
 ```http
 POST /add-to-cart HTTP/1.1
 Body: { “item_id”: 123, “quantity”: 2}
+```
 
 -	You’re saying: “Hey server, please add this item to my cart.”
 
