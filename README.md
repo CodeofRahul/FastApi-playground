@@ -65,6 +65,7 @@ GET /search?query=shoes HTTP/1.1
 ```http
 POST /add-to-cart HTTP/1.1
 Body: { “item_id”: 123, “quantity”: 2}
+```
 
 -	You’re saying: “Hey server, please add this item to my cart.”
 
