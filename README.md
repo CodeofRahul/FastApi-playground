@@ -316,6 +316,24 @@ In this case:
 `Query()` is a utility function provided by **FastAPI** to declare, validate, and document **query parameters** in your API endpoints.
 
 
+## Pydantic
+
+**1. Define a Pydantic model** that represents the **ideal schema** of the data.
+
+- This includes the expected fields, their types, and any validation constraints (e.g. `gt=0` for positive number).
+
+**2. nstantiate the model with raw input data** (Usually a dictionary or JSON-like structure).
+
+- Pydantic will Automatically **validate** the data and **coerce** it into the correct Python type (if possible).
+- If the data doesn't meet the model's requirements, Pydantic raise a `validationError`.
+
+**3. Pass the validateed model object** to functions or use it throughout your codebase.
+
+- This ensures that every part of your program works with **clean, type-safe, and logically valid data**.
+
+
+
+
 
 
 
