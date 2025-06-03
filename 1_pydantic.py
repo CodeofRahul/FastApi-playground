@@ -3,7 +3,7 @@ from typing import List, Dict, Optional, Annotated
 
 class Patient(BaseModel):
 
-    name: Annotated[str, Field(max_length=50, title='Name of the patient', description='Give the name of the patient in less than 50 chars', examples=['Nitish', 'Rahul'])]
+    name: Annotated[str, Field(max_length=50, title='Name of the patient', description='Give the name of the patient in less than 50 chars', examples=['Nitish', 'Rahul'])] # Annotated allows you to add metadata to type hints, enabling more detailed validation.
     email: EmailStr
     linkedin_url: AnyUrl
     age: int = Field(gt=0, lt=120)
@@ -24,6 +24,6 @@ def insert_patient_data(patient: Patient):
 
 Patient_info = {'name': 'nitish','email':'abc@gmail.com', 'linkedin_url': 'http://linkedin.com/22554', 'age':30, 'weight': 75.2, 'contact_details':{'phone': '35367744'}}         # without allergies and married
 
-Patient1 = Patient(**Patient_info)
+Patient1 = Patient(**Patient_info)  # passing the dictionary to the model
 
-insert_patient_data(Patient1)
+insert_patient_data(Patient1)   # calling the function with the model as argument

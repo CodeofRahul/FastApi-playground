@@ -30,6 +30,11 @@ uvicorn main:app --reload
 fastapi dev main.py
 ```
 
+## Request body:
+
+A **request body** is the portion of an HTTP request that contains data sent by the client to the server. It is typically used to HTTP methods POST or PUT to transmit structured data (e.g. JSON, XML, form-data) for the purpose of creating or updating resources on the server. The server parses the request body to extract the necessary information and perform the intended operation.
+
+
 
 ## **HTTP Requests:**
 
@@ -333,7 +338,9 @@ In this case:
 
 
 
+### What is the difference between class and function in Python?
 
+In Python, you use classes to describe objects. Think of a class as a tool you use to create your own data structures that contain information about something; you can then use functions (methods) to perform operations on the data you describe.
 
 
 
